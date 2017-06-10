@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 21, 2016, 11:10:27 PM
+    Author     : robertpepple
+*/
+.text-area {
+    -fx-font-family: Arial;
+    -fx-font-size: 14;
+    -fx-text-fill: #cc0000;
+    -fx-display-caret:false;
+    -fx-border-style: none;
+    -fx-border-color: #ffe4c4;
+}
+
+.text-area .content{
+    -fx-background-color: #ffe4c4;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #99ccff;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: #0000ff;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.split-pane *.split-pane-divider {
+    -fx-padding: 0 1 0 1;
+}
+
+.split-pane-divider {
+   -fx-background-color: transparent;
+}
+
+/* Default row background is white, border us black */
+.table-row-cell {
+    -fx-text-fill: #000000;
+    -fx-table-cell-border-color: #000000;
+    -fx-alignment: center;
+}
+
+/* Text in the rows will be black */
+.table-row-cell .text {
+    -fx-fill: #000000 ;
+}
+

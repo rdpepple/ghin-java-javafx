@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="850.0" prefWidth="796.0" style="-fx-background-color: bisque;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ghincalculator.GHINCalculatorController">
+   <children>
+      <SplitPane fx:id="splitMain" dividerPositions="0.24882075471698112" layoutX="47.0" layoutY="72.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: bisque;" stylesheets="@GhinCalculator.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="266.0" prefWidth="798.0">
+               <children>
+                  <ImageView fitHeight="216.0" fitWidth="798.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@gc1.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="798.0">
+               <children>
+                  <SplitPane fx:id="splitH1" dividerPositions="0.6834170854271356" layoutY="-2.0" prefHeight="356.0" prefWidth="798.0" style="-fx-background-color: bisque;">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="346.0" prefWidth="540.0">
+                           <children>
+                              <ChoiceBox fx:id="golfCourseChoiceBox" layoutX="202.0" layoutY="14.0" onMouseClicked="#handleCourseChoice" prefHeight="27.0" prefWidth="329.0" AnchorPane.topAnchor="14.0" />
+                              <DatePicker fx:id="playDatePicker" layoutX="202.0" layoutY="47.0" promptText="yyyy-mm-dd" />
+                              <TextField fx:id="coursePlayedField" layoutX="202.0" layoutY="80.0" prefHeight="27.0" prefWidth="329.0" />
+                              <TextField fx:id="courseSlopeField" layoutX="202.0" layoutY="114.0" />
+                              <TextField fx:id="courseRatingField" layoutX="202.0" layoutY="147.0" />
+                              <TextField fx:id="scoreToPostField" layoutX="202.0" layoutY="181.0" />
+                              <Label layoutX="14.0" layoutY="22.0" text="Select Golf Course (if in list):" AnchorPane.rightAnchor="350.0" />
+                              <Label layoutX="62.0" layoutY="55.0" text="Enter Date of Round:" AnchorPane.rightAnchor="350.0" />
+                              <Label layoutX="61.0" layoutY="88.0" text="Enter Course Played:" AnchorPane.rightAnchor="350.0" />
+                              <Label layoutX="68.0" layoutY="122.0" text="Enter Course Slope:" AnchorPane.rightAnchor="350.0" />
+                              <Label layoutX="63.0" layoutY="155.0" text="Enter Course Rating:" AnchorPane.rightAnchor="350.0" />
+                              <Label layoutX="114.0" layoutY="189.0" text="Enter Score:" AnchorPane.rightAnchor="350.0" />
+                              <Button fx:id="postScoreButton" layoutX="415.0" layoutY="147.0" mnemonicParsing="false" onMouseClicked="#handlePostScore" text="Post Score" />
+                              <Button fx:id="clearFormButton" layoutX="415.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#handleClearForm" text="Clear Form" />
+                              <TextArea fx:id="formValidationTextField" editable="false" layoutX="65.0" layoutY="218.0" prefHeight="126.0" prefWidth="441.0" styleClass="text-area" stylesheets="@GhinCalculator.css">
+                                 <font>
+                                    <Font name="Arial Bold" size="14.0" />
+                                 </font>
+                              </TextArea>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="278.0">
+                           <children>
+                              <SplitPane fx:id="splitHc" dividerPositions="0.18359375" layoutX="60.0" layoutY="29.0" orientation="VERTICAL" prefHeight="258.0" prefWidth="304.0" style="-fx-background-color: bisque;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <Label alignment="CENTER" layoutX="92.0" layoutY="13.0" prefHeight="43.0" prefWidth="302.0" text="Calculated Handicap" textAlignment="CENTER" textFill="#4b6f30" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font name="Arial Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="273.0">
+                                       <children>
+                                          <Label fx:id="calculatedGhin" alignment="CENTER" layoutX="39.0" layoutY="20.0" prefHeight="164.0" prefWidth="176.0" textFill="#4b6f30">
+                                             <font>
+                                                <Font name="Arial" size="72.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+                  <AnchorPane layoutX="-1.0" layoutY="351.0" prefHeight="282.0" prefWidth="798.0">
+                     <children>
+                        <TableView fx:id="scoreHistoryTableView" editable="true" layoutY="-1.0" prefHeight="282.0" prefWidth="794.0" style="-fx-background-color: bisque;" stylesheets="@GhinCalculator.css">
+                          <columns>
+                            <TableColumn fx:id="scoreTableDatesCol" prefWidth="90.0" sortable="false" text="Date Played" />
+                              <TableColumn fx:id="scoreTableUsedCol" prefWidth="75.0" visible="false" />
+                              <TableColumn fx:id="scoreTableCoursesCol" prefWidth="533.0" sortable="false" text="Golf Course" />
+                              <TableColumn fx:id="scoreTableSlopesCol" minWidth="0.0" prefWidth="50.0" sortable="false" text="Slope" />
+                              <TableColumn fx:id="scoreTableRatingsCol" minWidth="0.0" prefWidth="51.0" sortable="false" text="Rating" />
+                              <TableColumn fx:id="scoreTableScoresCol" prefWidth="51.0" sortable="false" text="Score" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
